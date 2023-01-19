@@ -10871,7 +10871,7 @@ body {
 
 .scroll-down-icon {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   width: 30px;
   animation: scroll-down-bounce 1s alternate infinite linear;
 }
