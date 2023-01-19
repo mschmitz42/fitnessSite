@@ -1,0 +1,136 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek Haff Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        .full-screen-header {
+            background-image: url("{% static 'img/AdobeStock_135845464.jpeg' %}");
+        }
+    </style>
+</head>
+<body>
+    <header class="full-screen-header">
+        <nav class="nav nav-top">
+            <a href="#"><img class="logo" src="{% static 'img/DHF-Logo_Transparent_NoBuffer.png' %}" alt="Derek Haff Fitness Logo"></a>
+            <ul class="nav-list">
+                <li><a href="#curriculum-section">About</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+                <li><a class="btn btn-primary" href="#">Login</a></li>
+            </ul>
+        </nav>
+        <h1 class="title">Derek Haff Fitness</h1>
+        <span class="sub-title">Where &quot;Bro&quot; Meets Yoga</span>
+        <a class="btn btn-primary btn-grow" href="#curriculum-section">Learn More</a>
+        <a href="#curriculum-section"><img class="scroll-down-icon" src="{% static 'img/arrow_down.svg' %}" alt="Scroll Down Icon"></a>
+    </header>
+    <main>
+        <section id="curriculum-section" class="section">
+            <h2 class="section-title">What You Can Expect</h2>
+            <div class="curriculum-grid">
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/watch-icon.png' %}" alt="HTML 5 Icon">
+                    <p>Flexible scheduling. We&apos;ll tailor workouts to fit your busy lifestyle.</p>
+                </div>
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/dumbell.png' %}" alt="Node JS Icon">
+                    <p>Personalized fitness assessment and goal setting. We will match your workouts to your goals and current abilities.</p>
+                </div>
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/weight-bench.png' %}" alt="VSCode Icon">
+                    <p>A supportive and encouraging workout environment. If it&apos;s fun, you'll keep coming back.</p>
+                </div>
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/dumbells.png' %}" alt="Database Icon">
+                    <p>A variety of equipment and exercises to best meet your fitness goals.</p>
+                </div>
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/bench-press.png' %}" alt="Modern Tools Icon">
+                    <p>Web-based tools to help you track your progress and fuel your motivation.</p>
+                </div>
+                <div class="curriculum-grid-item">
+                    <img src="{% static 'img/weight-bench-2.png' %}" alt="React Icon">
+                    <p>An online library of demonstration videos to help you maintain excellent form and technique when you work out at home.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-accent">
+            <div class="pricing-cards-container">
+                <div class="pricing-card">
+                    <div class="price-header">
+                        <div class="plan-name"> Basic</div>
+                        <div class="plan-price">$55</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">45 Minute Training Session</div>
+                        <div class="feature">Personalized Assessment</div>
+                        <div class="feature">Personalized Goal Setting</div>
+                        <div class="feature inactive">Goal Tracking on Our Web Site</div>
+                        <div class="feature inactive">Personalized Diet Coaching</div>
+                        <div class="feature inactive">24/7 Email &amp; Phone Support</div>
+                    </div>
+                </div>
+                <div class="pricing-card accent">
+                    <div class="price-header">
+                        <div class="plan-name"> Preferred</div>
+                        <div class="plan-price">$60</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">60 Minute Training Session</div>
+                        <div class="feature">Personalized Assessment</div>
+                        <div class="feature">Personalized Goal Setting</div>
+                        <div class="feature">Goal Tracking on Our Web Site</div>
+                        <div class="feature inactive">Personalized Diet Coaching</div>
+                        <div class="feature inactive">24/7 Email &amp; Phone Support</div>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="price-header">
+                        <div class="plan-name"> Pro</div>
+                        <div class="plan-price">$75</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">75 Minute Training Session</div>
+                        <div class="feature">Personalized Assessment</div>
+                        <div class="feature">Personalized Goal Setting</div>
+                        <div class="feature">Goal Tracking on Our Web Site</div>
+                        <div class="feature">Personalized Diet Coaching</div>
+                        <div class="feature">24/7 Email &amp; Phone Support</div>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact-section" class="section">
+            <h2 class="section-title">Contact Derek</h2>
+            <form class="form">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="message">Message</label>
+                <textarea name="message" id="message"></textarea>
+                <div class="btn-container">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <nav class="nav">
+            <a href="#"><img class="logo" src="{% static 'img/DHF-Logo_Transparent_NoBuffer.png' %}" alt="Derek Haff Fitness Logo"></a>
+            <ul class="nav-list">
+                <li><a href="#curriculum-section">About</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+                <li><a class="btn btn-primary" href="#">Login</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
