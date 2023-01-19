@@ -2,3 +2,4 @@ node_modules/
 venv/
 assets/
 fitnessSite/settings.py
+fitnessSite/wsgi.py
