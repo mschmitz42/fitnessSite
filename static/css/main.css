@@ -10772,16 +10772,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #1B2522;
-}
-
 .full-screen-header {
   height: 100vh;
   background-size: cover;
@@ -10793,6 +10783,90 @@ body {
   flex-direction: column;
   position: relative;
   color: white;
+}
+
+.page-content {
+  height: 100vh;
+  padding-top: 75px;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.scroll-down-icon {
+  position: absolute;
+  bottom: 1rem;
+  width: 30px;
+  animation: scroll-down-bounce 1s alternate infinite linear;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.section-title {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+}
+
+.section-accent {
+  background-color: hsl(200deg, 100%, 50%);
+}
+
+@keyframes scroll-down-bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 544px) {
+  .title {
+    font-size: 2rem;
+  }
+  .sub-title {
+    font-size: 1rem;
+  }
+}
+.btn {
+  padding: 0.25em 1em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  transition: 200ms;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  color: white;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: hsl(200deg, 100%, 40%);
+}
+
+.btn-grow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px 1px black;
+}
+
+.btn-container {
+  text-align: end;
 }
 
 .nav {
@@ -10833,124 +10907,8 @@ body {
   color: #CCC;
 }
 
-.title {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.sub-title {
-  font-size: 1.5rem;
-  margin-top: 0.3rem;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  padding: 0.25em 1em;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-size: inherit;
-  transition: 200ms;
-}
-
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus {
-  color: white;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: hsl(200deg, 100%, 40%);
-}
-
-.btn-grow:hover {
-  transform: scale(1.1);
-  box-shadow: 0 2px 5px 1px black;
-}
-
-.scroll-down-icon {
-  position: absolute;
-  bottom: 3rem;
+.scroll-up-icon {
   width: 30px;
-  animation: scroll-down-bounce 1s alternate infinite linear;
-}
-
-.section {
-  padding: 2rem;
-}
-
-.section-title {
-  margin: 0;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-align: center;
-  color: black;
-}
-
-.curriculum-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 450px));
-  justify-content: center;
-  row-gap: 10px;
-  column-gap: 50px;
-}
-
-.curriculum-grid-item {
-  display: flex;
-  align-items: center;
-}
-
-.curriculum-grid-item:hover img {
-  animation: shake 100ms;
-}
-
-.curriculum-grid-item img {
-  width: 90px;
-  margin-right: 1rem;
-}
-
-.section-accent {
-  background-color: hsl(200deg, 100%, 50%);
-}
-
-.form {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.form label {
-  color: black;
-  font-weight: bold;
-}
-
-.form input,
-.form textarea {
-  width: 100%;
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
-  outline: none;
-  border: 1px solid #1B2522;
-  border-radius: 0.3em;
-  padding: 0.5em;
-  color: inherit;
-  font-family: inherit;
-  transition: border-color 100ms;
-}
-
-.form textarea {
-  resize: vertical;
-  min-height: 75px;
-  max-height: 200px;
-}
-
-.form input:focus,
-.form textarea:focus {
-  border-color: #0AF;
-}
-
-.btn-container {
-  text-align: end;
 }
 
 /* Pricing Section */
@@ -11026,22 +10984,6 @@ body {
   margin-bottom: 0;
 }
 
-@keyframes shake {
-  25% {
-    transform: rotate(5deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-}
-@keyframes scroll-down-bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
 @media (max-width: 960px) {
   .pricing-cards-container {
     flex-wrap: wrap;
@@ -11068,14 +11010,83 @@ body {
     display: none;
   }
 }
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 450px));
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 50px;
+}
+
+.curriculum-grid-item {
+  display: flex;
+  align-items: center;
+}
+
+.curriculum-grid-item:hover img {
+  animation: shake 100ms;
+}
+
+.curriculum-grid-item img {
+  width: 90px;
+  margin-right: 1rem;
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+.form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form label {
+  color: black;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  outline: none;
+  border: 1px solid #1B2522;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  color: inherit;
+  font-family: inherit;
+  transition: border-color 100ms;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 75px;
+  max-height: 200px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #0AF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #1B2522;
+}
+
 @media (max-width: 544px) {
   body {
     font-size: 0.9rem;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .sub-title {
-    font-size: 1rem;
   }
 }

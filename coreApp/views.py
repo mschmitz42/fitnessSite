@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def coreApp_index(request):
+    return render(request, 'coreApp/index.html')
+
+

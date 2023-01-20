@@ -1,33 +1,26 @@
+{% extends 'base.html' %}
+
+
 {% load static %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derek Haff Fitness</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% block headContent %}
+
     <style>
         .full-screen-header {
             background-image: url("{% static 'img/AdobeStock_135845464.jpeg' %}");
         }
     </style>
-</head>
-<body>
+
+{% endblock %}
+
+
+
+{% block content %}
+
     <header class="full-screen-header">
-        <nav class="nav nav-top">
-            <a href="#"><img class="logo" src="{% static 'img/DHF-Logo_Transparent_NoBuffer.png' %}" alt="Derek Haff Fitness Logo"></a>
-            <ul class="nav-list">
-                <li><a href="#curriculum-section">About</a></li>
-                <li><a href="#contact-section">Contact</a></li>
-                <li><a class="btn btn-primary" href="#">Login</a></li>
-            </ul>
-        </nav>
         <h1 class="title">Derek Haff Fitness</h1>
-        <span class="sub-title">Where &quot;Bro&quot; Meets Yoga</span>
+        <span class="sub-title">Come With Us If You Want To Lift</span>
         <a class="btn btn-primary btn-grow" href="#curriculum-section">Learn More</a>
         <a href="#curriculum-section"><img class="scroll-down-icon" src="{% static 'img/arrow_down.svg' %}" alt="Scroll Down Icon"></a>
     </header>
@@ -122,15 +115,14 @@
             </form>
         </section>
     </main>
+
     <footer>
         <nav class="nav">
-            <a href="#"><img class="logo" src="{% static 'img/DHF-Logo_Transparent_NoBuffer.png' %}" alt="Derek Haff Fitness Logo"></a>
+            <a href="{% url 'coreApp:home' %}"><img class="logo" src="{% static 'img/DHF-Logo-Transparent.png' %}" alt="Derek Haff Fitness Logo"></a>
             <ul class="nav-list">
-                <li><a href="#curriculum-section">About</a></li>
-                <li><a href="#contact-section">Contact</a></li>
-                <li><a class="btn btn-primary" href="#">Login</a></li>
+                <li><a href="#"><img class="scroll-up-icon" src="{% static 'img/arrow_up.svg' %}" alt="Scroll Up Icon"></a></li>
             </ul>
         </nav>
     </footer>
-</body>
-</html>
+
+{% endblock %}

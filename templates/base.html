@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek Haff Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {% block headContent %}
+
+    {% endblock %}
+
+
+</head>
+<body>
+        <nav class="nav nav-top">
+            <a href="{% url 'coreApp:home' %}"><img class="logo" src="{% static 'img/DHF-Logo-Transparent.png' %}" alt="Derek Haff Fitness Logo"></a>
+            <ul class="nav-list">
+                {% if user.is_authenticated %}
+                    <li><a href="#">Tracker</a></li>
+                    <li><a href="#">Stuff</a></li>
+                    <li><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a class="btn btn-primary" href="{% url 'login' %}">Login</a></li>
+                {%  endif %}
+            </ul>
+        </nav>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
