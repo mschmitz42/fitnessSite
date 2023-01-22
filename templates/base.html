@@ -22,9 +22,7 @@
             <a href="{% url 'coreApp:home' %}"><img class="logo" src="{% static 'img/DHF-Logo-Transparent.png' %}" alt="Derek Haff Fitness Logo"></a>
             <ul class="nav-list">
                 {% if user.is_authenticated %}
-                    <li><a href="#">Tracker</a></li>
-                    <li><a href="#">Stuff</a></li>
-                    <li><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'coreApp:home' %}"><img class="menu-icon" src="{% static 'img/menu-icon.svg' %}" alt="Menu Icon"></a></li>
                 {% else %}
                     <li><a class="btn btn-primary" href="{% url 'login' %}">Login</a></li>
                 {%  endif %}

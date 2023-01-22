@@ -102,19 +102,28 @@
         </section>
         <section id="contact-section" class="section">
             <h2 class="section-title">Contact Derek</h2>
-            <form class="form">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="phone">Phone</label>
-                <input type="phone" name="phone" id="phone">
-               <label for="message">Message</label>
-                <textarea name="message" id="message"></textarea>
-                <div class="btn-container">
-                    <button class="btn btn-primary" type="submit">Send</button>
-                </div>
-            </form>
+
+                <form class="form" role="form" method="post">
+                    {% csrf_token %}
+
+                    {% if form.errors %}
+                        <div class="alert alert-danger mt-3" role="alert">
+                          {{ form.errors }}
+                        </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {% if field.widget_type == "textarea" %}
+                                <textarea name="{{ field.html_name }}" id="{{ field.id_for_label }}" placeholder="<required>"></textarea>
+                            {% else %}
+                                <input type="{{ field.widget_type }}" name="{{ field.html_name }}" id="{{ field.id_for_label }}" placeholder="<required>">
+                            {% endif %}
+                    {% endfor %}
+                    <div class="btn-container">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </form>
         </section>
     </main>
 

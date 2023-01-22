@@ -10886,7 +10886,12 @@ textarea.form-control-lg {
 }
 
 .logo {
-  width: 75px;
+  width: 80px;
+}
+
+.menu-icon {
+  height: 35px;
+  margin-right: 1em;
 }
 
 .nav-list {
