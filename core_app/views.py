@@ -4,7 +4,8 @@ from .forms import ContactForm
 # from django.http import HttpResponse, HttpResponseRedirect
 from sms import send_sms
 
-def coreApp_index(request):
+
+def core_app_index(request):
     if request.method == "GET":
         form = ContactForm()
     else:
@@ -24,7 +25,7 @@ def coreApp_index(request):
             #               ["derek.haff@yahoo.com"])
             # except BadHeaderError:
             #     return HttpResponse("Invalid Header Found")
-            return redirect("coreApp:home")
+            return redirect("core_app:home")
 
-    return render(request, 'coreApp/index.html', {"form": form})
+    return render(request, 'core_app/index.html', {"form": form})
 
