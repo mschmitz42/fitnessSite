@@ -16,7 +16,7 @@ def coreApp_index(request):
                 "message": form.cleaned_data["message"],
             }
             message = "\n".join(body.values())
-            send_sms(message, None, [+14154701060])
+            send_sms(message, None, [+14154701060,+15309791020])
             # try:
             #     send_mail("Message From DHF Website",
             #               message,
