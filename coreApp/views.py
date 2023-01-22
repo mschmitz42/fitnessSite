@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-
+# from django.core.mail import send_mail, BadHeaderError
+# from django.http import HttpResponse, HttpResponseRedirect
+from sms import send_sms
 
 def coreApp_index(request):
     if request.method == "GET":
@@ -16,13 +16,14 @@ def coreApp_index(request):
                 "message": form.cleaned_data["message"],
             }
             message = "\n".join(body.values())
-            try:
-                send_mail("Message From DHF Website",
-                          message,
-                          "webmaster@derek-haff-fitness.com",
-                          ["derek.haff@yahoo.com"])
-            except BadHeaderError:
-                return HttpResponse("Invalid Header Found")
+            send_sms(message, None, [+14154701060])
+            # try:
+            #     send_mail("Message From DHF Website",
+            #               message,
+            #               "webmaster@derek-haff-fitness.com",
+            #               ["derek.haff@yahoo.com"])
+            # except BadHeaderError:
+            #     return HttpResponse("Invalid Header Found")
             return redirect("coreApp:home")
 
     return render(request, 'coreApp/index.html', {"form": form})
