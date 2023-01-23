@@ -8,9 +8,17 @@
 
     <style>
         .full-screen-header {
-            background-image: url("{% static 'img/AdobeStock_135845464.jpeg' %}");
+            background-image: url("{% static 'img/home-page-bg.jpg' %}");
         }
-    </style>
+
+         @media (max-width: 544px) {
+
+            .full-screen-header {
+                background-image: url("{% static 'img/home-page-bg-mobile.jpg' %}");
+            }
+
+        }
+   </style>
 
 {% endblock %}
 
