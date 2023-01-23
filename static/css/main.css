@@ -10805,7 +10805,7 @@ textarea.form-control-lg {
 
 .page-content {
   height: 100vh;
-  padding-top: 75px;
+  padding-top: 51px;
 }
 
 .title {
@@ -11096,6 +11096,33 @@ textarea.form-control-lg {
 .form input:focus,
 .form textarea:focus {
   border-color: #0AF;
+}
+
+.section-dashboard {
+  height: 100vh;
+  background-color: #e9ecef;
+}
+
+.dashboard-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dashboard-card {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.3em;
+  margin: 1rem 0;
+}
+
+.dashboard-card-header {
+  text-align: center;
+}
+
+.dashboard-card-nav {
+  text-align: center;
 }
 
 * {

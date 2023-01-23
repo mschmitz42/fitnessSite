@@ -29,3 +29,10 @@ def core_app_index(request):
 
     return render(request, 'core_app/index.html', {"form": form})
 
+
+def core_app_dashboard(request):
+    return render(request, 'core_app/dashboard.html')
+
+
+def core_app_under_construction(request):
+    return render(request, 'core_app/under_construction.html')
