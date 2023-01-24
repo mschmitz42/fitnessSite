@@ -30,8 +30,8 @@ def core_app_index(request):
     return render(request, 'core_app/index.html', {"form": form})
 
 
-def core_app_dashboard(request):
-    return render(request, 'core_app/dashboard.html')
+def core_app_menu(request):
+    return render(request, 'core_app/menu.html')
 
 
 def core_app_under_construction(request):

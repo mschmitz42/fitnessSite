@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block headContent %}
+
+    <style>
+        .bg-1 {
+            background-image: url("{% static 'img/menu-item-bg-1.jpg' %}");
+        }
+        .bg-2 {
+            background-image: url("{% static 'img/menu-item-bg-2.jpg' %}");
+        }
+        .bg-3 {
+            background-image: url("{% static 'img/menu-item-bg-3.jpg' %}");
+        }
+        .bg-4 {
+            background-image: url("{% static 'img/menu-item-bg-4.jpg' %}");
+        }
+    </style>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+   <main class="page-content">
+        <section class="section section-menu">
+            <div class="menu-items-container">
+                <div class="menu-item bg-2">
+                    <div class="menu-item-header">
+                        <a href="{% url 'core_app:under-construction' %}">Fitness Tracker</a>
+                    </div>
+                </div>
+                <div class="menu-item bg-3">
+                    <div class="menu-item-header">
+                        <a href="{% url 'core_app:under-construction' %}">Web Site Settings</a>
+                    </div>
+                </div>
+                <div class="menu-item bg-4">
+                    <div class="menu-item-header">
+                        <a href="{% url 'core_app:under-construction' %}">Manage Clients</a>
+                    </div>
+               </div>
+                <div class="menu-item bg-1">
+                    <div class="menu-item-header">
+                        <a href="{% url 'core_app:under-construction' %}">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </main>
+
+
+
+
+{% endblock %}
+
