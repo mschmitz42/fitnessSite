@@ -11116,8 +11116,6 @@ textarea.form-control-lg {
 .menu-item {
   display: flex;
   padding: 1rem;
-  background-color: white;
-  border: 1px solid black;
   border-radius: 0.3em;
   margin: 1rem 0;
   background-size: cover;
@@ -11128,6 +11126,7 @@ textarea.form-control-lg {
   max-width: 600px;
   align-items: center;
   justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .menu-item-header {
