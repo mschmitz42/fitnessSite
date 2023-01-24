@@ -10821,7 +10821,7 @@ textarea.form-control-lg {
 
 .scroll-down-icon {
   position: absolute;
-  bottom: 50px;
+  bottom: 75px;
   width: 30px;
   animation: scroll-down-bounce 1s alternate infinite linear;
 }
@@ -11108,7 +11108,7 @@ textarea.form-control-lg {
 
 .menu-items-container {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 10px;
   column-gap: 10px;
 }
@@ -11124,6 +11124,8 @@ textarea.form-control-lg {
   background-position-x: center;
   background-position-y: center;
   height: 25vh;
+  width: 45vw;
+  max-width: 600px;
   align-items: center;
   justify-content: center;
 }

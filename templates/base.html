@@ -18,7 +18,7 @@
 </head>
 <body>
         <nav class="nav nav-top">
-            <a href="{% url 'core_app:home' %}"><img class="logo" src="{% static 'img/DHF-Logo-Transparent.png' %}" alt="Derek Haff Fitness Logo"></a>
+            <a href="{% url 'core_app:home' %}"><img class="logo" src="{% static 'img/DHF-logo-primary.png' %}" alt="Derek Haff Fitness Logo"></a>
             <ul class="nav-list">
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'core_app:menu' %}"><img class="menu-icon" src="{% static 'img/menu-icon.svg' %}" alt="Menu Icon"></a></li>
