@@ -10821,7 +10821,7 @@ textarea.form-control-lg {
 
 .scroll-down-icon {
   position: absolute;
-  bottom: 75px;
+  bottom: 80px;
   width: 30px;
   animation: scroll-down-bounce 1s alternate infinite linear;
 }
