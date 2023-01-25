@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block headContent %}
+
+    <script defer src="{% static 'js/index-bundle.js' %}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-content">
+
+        <noscript>JavaScript must be enabled to run this app.</noscript>
+
+{#        <div id="root-js" />#}
+
+        <div id="tracker-js" />
+
+    </main>
+{% endblock %}

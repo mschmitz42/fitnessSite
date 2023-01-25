@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def tracker_index(request):
+    return render(request, 'tracker/index.html')
