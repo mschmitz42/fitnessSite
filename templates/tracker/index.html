@@ -2,8 +2,15 @@
 
 {% load static %}
 
+{% load settings_value %}
+
 
 {% block headContent %}
+
+    <script type="text/javascript">
+        sessionStorage.setItem("API_URL", '{% settings_value "API_URL" %}')
+        sessionStorage.setItem("USER_ID", '{{ user.id }}')
+    </script>
 
     <script defer src="{% static 'js/index-bundle.js' %}"></script>
 
@@ -15,8 +22,6 @@
     <main class="page-content">
 
         <noscript>JavaScript must be enabled to run this app.</noscript>
-
-{#        <div id="root-js" />#}
 
         <div id="tracker-js" />
 
