@@ -28,8 +28,13 @@ class MeasurementViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Measurement.objects.filter(user_id=self.request.user.id,
-                                          date__gte=datetime.now()-timedelta(days=7)).order_by('date', 'id')
+        age = int(self.request.query_params.get("age", 365))
+        user_id = int(self.request.query_params.get("user", self.request.user.id))
+        start_date = datetime.now()-timedelta(days=age)
+
+        qs = Measurement.objects.filter(user_id=user_id, date__gte=start_date).order_by('date', 'id')
+
+        return qs
 
 
 
