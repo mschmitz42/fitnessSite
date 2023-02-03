@@ -11935,11 +11935,15 @@ textarea.form-control-lg {
   margin-right: 10px;
 }
 
-@media (max-width: 544px) {
-  .chart-container {
-    height: 300px;
-  }
+.chart-param-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+
 * {
   box-sizing: border-box;
 }
