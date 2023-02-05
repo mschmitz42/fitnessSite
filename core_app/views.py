@@ -1,8 +1,14 @@
+import requests
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from .forms import ContactForm, UploadFileForm
 # from django.core.mail import send_mail, BadHeaderError
 # from django.http import HttpResponse, HttpResponseRedirect
 from sms import send_sms
+from .file_upload import handle_measurement_file_import
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 def core_app_index(request):
@@ -36,3 +42,31 @@ def core_app_menu(request):
 
 def core_app_under_construction(request):
     return render(request, 'core_app/under_construction.html')
+
+
+def core_app_profile(request):
+    return render(request, 'core_app/profile.html')
+
+
+def core_app_file_upload(request):
+    if request.method == 'GET':
+        form = UploadFileForm()
+        return render(request, 'core_app/file_upload.html', {'form': form})
+
+    try:
+        form = UploadFileForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            handle_measurement_file_import(request.user, 'weight', request.FILES['file'])
+        else:
+            logger.debug(form.errors.as_data())
+
+    except Exception as e:
+        logger.error("Unable to upload file:" + repr(e))
+
+    return render(request, 'core_app/profile.html')
+
+
+
+
+

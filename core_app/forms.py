@@ -12,3 +12,8 @@ class ContactForm(forms.Form):
                               label="Message",
                               error_messages={"required": "Please enter a message"})
 
+
+class UploadFileForm(forms.Form):
+    file = forms.FileField(required=True, label="Measurements File")
+
+

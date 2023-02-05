@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block headContent %}
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <main class="page-content">
+       <section class="section">
+            <h2 class="section-title">Upload My Fitness Pal File</h2>
+
+                <form class="form" role="form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {% if form.errors %}
+                        <div class="alert alert-danger mt-3" role="alert">
+                          {{ form.errors }}
+                        </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                    {% endfor %}
+                    <div class="btn-container">
+                        <button class="btn btn-primary" type="submit">Upload</button>
+                    </div>
+                </form>
+        </section>
+    </main>
+
+
+
+
+{% endblock %}
+
