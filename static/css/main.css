@@ -11636,6 +11636,44 @@ textarea.form-control-lg {
   text-align: end;
 }
 
+.selector-button {
+  border: 1px solid hsl(200deg, 100%, 50%);
+  color: hsl(200deg, 100%, 50%);
+}
+
+.selector-button.active {
+  border: 1px solid hsl(200deg, 100%, 50%);
+  background-color: hsl(200deg, 100%, 50%);
+  color: white;
+}
+
+.selector-button:hover,
+.selector-button:focus {
+  background-color: hsl(200deg, 100%, 50%);
+  color: white;
+}
+
+.selector-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.selector-button:nth-child(2) {
+  border-radius: 0;
+  border-right: none;
+}
+
+.selector-button:nth-child(3) {
+  border-radius: 0;
+  border-right: none;
+}
+
+.selector-button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -11915,7 +11953,7 @@ textarea.form-control-lg {
 }
 .measurement-form-container {
   display: grid;
-  grid-template-columns: 120px 120px 1fr;
+  grid-template-columns: 120px 120px 100px;
   row-gap: 5px;
   column-gap: 5px;
   justify-content: flex-start;
