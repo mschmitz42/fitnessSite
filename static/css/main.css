@@ -11674,6 +11674,19 @@ textarea.form-control-lg {
   border-bottom-left-radius: 0;
 }
 
+.add-button {
+  color: hsl(200deg, 100%, 50%);
+  font-size: 3em;
+  line-height: 1;
+  padding: 0px 5px 5px 5px;
+}
+
+.add-button:hover,
+.add-button:focus {
+  background-color: hsl(200deg, 100%, 50%);
+  color: white;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -11980,6 +11993,10 @@ textarea.form-control-lg {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.add-button-container {
+  margin-left: 20px;
 }
 
 * {
