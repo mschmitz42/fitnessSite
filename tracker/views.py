@@ -3,9 +3,13 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, AllowAny
-from .models import Measurement
-from .serializers import MeasurementSerializer
+from .models import Measurement, Macro
+from .serializers import MeasurementSerializer, MacroSerializer
 from datetime import datetime, timedelta
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 def tracker_index(request):
@@ -35,6 +39,23 @@ class MeasurementViewSet(viewsets.ModelViewSet):
         qs = Measurement.objects.filter(user_id=user_id, date__gte=start_date).order_by('date', 'id')
 
         return qs
+
+
+class MacroViewSet(viewsets.ModelViewSet):
+    serializer_class = MacroSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        logger.info("MacroViewset:get_queryset")
+
+        age = int(self.request.query_params.get("age", 365))
+        user_id = int(self.request.query_params.get("user", self.request.user.id))
+        start_date = datetime.now()-timedelta(days=age)
+
+        qs = Macro.objects.filter(user_id=user_id, date__gte=start_date).order_by('date', 'id')
+
+        return qs
+
 
 
 

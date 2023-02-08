@@ -8,7 +8,8 @@
 {% block headContent %}
 
     <script type="text/javascript">
-        sessionStorage.setItem("API_URL", '{% settings_value "API_URL" %}')
+        sessionStorage.setItem("MEASUREMENT_API_URL", '{% settings_value "MEASUREMENT_API_URL" %}')
+        sessionStorage.setItem("MACRO_API_URL", '{% settings_value "MACRO_API_URL" %}')
         sessionStorage.setItem("USER_ID", '{{ user.id }}')
     </script>
 

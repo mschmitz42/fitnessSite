@@ -14,6 +14,6 @@ class ContactForm(forms.Form):
 
 
 class UploadFileForm(forms.Form):
-    file = forms.FileField(required=True, label="Measurements File")
+    file = forms.FileField(required=True, label="Input File")
 
 

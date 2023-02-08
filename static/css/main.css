@@ -11639,6 +11639,8 @@ textarea.form-control-lg {
 .selector-button {
   border: 1px solid hsl(200deg, 100%, 50%);
   color: hsl(200deg, 100%, 50%);
+  border-radius: 0;
+  border-right: none;
 }
 
 .selector-button.active {
@@ -11654,24 +11656,15 @@ textarea.form-control-lg {
 }
 
 .selector-button:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: none;
-}
-
-.selector-button:nth-child(2) {
-  border-radius: 0;
-  border-right: none;
-}
-
-.selector-button:nth-child(3) {
-  border-radius: 0;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
   border-right: none;
 }
 
 .selector-button:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-right: 1px solid hsl(200deg, 100%, 50%);
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 
 .add-button {
@@ -11986,7 +11979,7 @@ textarea.form-control-lg {
   margin-right: 10px;
 }
 
-.chart-param-container {
+.age-param-container {
   display: flex;
   justify-content: center;
   align-items: center;

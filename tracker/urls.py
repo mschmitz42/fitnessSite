@@ -8,6 +8,7 @@ app_name = 'tracker'
 
 router = DefaultRouter()
 router.register(r"measurements", views.MeasurementViewSet, "measurement")
+router.register(r"macros", views.MacroViewSet, "macro")
 
 
 urlpatterns = [
