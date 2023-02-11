@@ -11676,12 +11676,27 @@ textarea.form-control-lg {
 
 .add-button:hover,
 .add-button:focus {
-  background-color: hsl(200deg, 100%, 50%);
-  color: white;
+  background-color: white;
+  color: hsl(200deg, 100%, 50%);
+}
+
+.close-button {
+  color: hsl(200deg, 100%, 50%);
+  font-size: 2.5em;
+  line-height: 0.5;
+  padding: 0;
+  margin: 5px 5px 0px 0px;
+  align-self: flex-end;
+  justify-self: flex-start;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background-color: white;
+  color: hsl(200deg, 100%, 50%);
 }
 
 .nav {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #1B2522;
@@ -11689,6 +11704,10 @@ textarea.form-control-lg {
 }
 
 .nav-top {
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1B2522;
+  padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -11891,19 +11910,83 @@ textarea.form-control-lg {
   border-color: #0AF;
 }
 
+.measurement-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: max-content;
+  border: 1px solid hsl(200deg, 100%, 50%);
+  border-radius: 0.3em;
+}
+
+.measurement-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.measurement-form label {
+  color: black;
+  font-weight: bold;
+}
+
+.measurement-form input {
+  width: 120px;
+  height: 30px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  outline: none;
+  border: 1px solid hsl(200deg, 100%, 50%);
+  border-radius: 0.3em;
+  padding: 0.5em;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 100ms;
+}
+
+.measurement-form input:focus {
+  border-color: #0AF;
+}
+
+.measurement-button-container {
+  margin-top: 10px;
+}
+
+.measurement-input-group {
+  margin-top: 10px;
+}
+
+.add-button-container {
+  margin-left: 20px;
+}
+
+.error {
+  color: red;
+}
+
 .section-menu {
   height: 100vh;
   background-color: #e9ecef;
-  display: flex;
+  display: grid;
+  grid-template-columns: 500px 1fr;
   justify-content: center;
   align-items: flex-start;
 }
 
 .menu-items-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 10px;
-  column-gap: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-template-columns: none;
+  row-gap: 0;
+  column-gap: 0;
+  max-width: none;
 }
 
 .menu-item {
@@ -11914,8 +11997,7 @@ textarea.form-control-lg {
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
-  height: 25vh;
-  width: 45vw;
+  height: 15vh;
   max-width: 600px;
   align-items: center;
   justify-content: center;
@@ -11940,56 +12022,26 @@ textarea.form-control-lg {
 }
 
 @media (max-width: 544px) {
-  .menu-item {
-    height: 15vh;
-    width: 90vw;
-  }
-  .menu-items-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    grid-template-columns: none;
-    row-gap: 0;
-    column-gap: 0;
-    max-width: none;
-  }
   .menu-item-header {
     font-size: 2rem;
   }
 }
-.measurement-form-container {
-  display: grid;
-  grid-template-columns: 120px 120px 100px;
-  row-gap: 5px;
-  column-gap: 5px;
-  justify-content: flex-start;
-  align-items: flex-end;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-
-.measurement-input {
-  width: 120px;
-  height: 30px;
-}
-
 .chart-container {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  max-width: 600px;
 }
 
 .age-param-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-}
-
-.add-button-container {
-  margin-left: 20px;
+  max-width: 600px;
 }
 
 * {
