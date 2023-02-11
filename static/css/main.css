@@ -11915,8 +11915,7 @@ textarea.form-control-lg {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10px;
   width: max-content;
   border: 1px solid hsl(200deg, 100%, 50%);
   border-radius: 0.3em;
@@ -11974,7 +11973,7 @@ textarea.form-control-lg {
   height: 100vh;
   background-color: #e9ecef;
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 600px 1fr;
   justify-content: center;
   align-items: flex-start;
 }
@@ -11982,6 +11981,7 @@ textarea.form-control-lg {
 .menu-items-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   grid-template-columns: none;
   row-gap: 0;
@@ -11998,6 +11998,7 @@ textarea.form-control-lg {
   background-position-x: center;
   background-position-y: center;
   height: 15vh;
+  width: 90%;
   max-width: 600px;
   align-items: center;
   justify-content: center;
@@ -12022,6 +12023,14 @@ textarea.form-control-lg {
 }
 
 @media (max-width: 544px) {
+  .section-menu {
+    height: 100vh;
+    background-color: #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .menu-item {
     height: 15vh;
     width: 90vw;
