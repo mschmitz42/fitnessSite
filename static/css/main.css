@@ -12022,6 +12022,10 @@ textarea.form-control-lg {
 }
 
 @media (max-width: 544px) {
+  .menu-item {
+    height: 15vh;
+    width: 90vw;
+  }
   .menu-item-header {
     font-size: 2rem;
   }
