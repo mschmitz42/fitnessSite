@@ -11683,7 +11683,7 @@ textarea.form-control-lg {
 .close-button {
   color: hsl(200deg, 100%, 50%);
   font-size: 2.5em;
-  line-height: 0.5;
+  line-height: 0.85;
   padding: 0;
   margin: 5px 5px 0px 0px;
   align-self: flex-end;
