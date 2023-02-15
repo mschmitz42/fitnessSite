@@ -13691,7 +13691,7 @@ textarea.form-control-lg {
 
 .add-button {
   color: hsl(200deg, 100%, 50%);
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1;
   padding: 0px 5px 5px 5px;
 }
@@ -13704,7 +13704,7 @@ textarea.form-control-lg {
 
 .close-button {
   color: hsl(200deg, 100%, 50%);
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 0.85;
   padding: 0;
   margin: 5px 5px 0px 0px;
@@ -13714,7 +13714,7 @@ textarea.form-control-lg {
 
 .profile-select-button {
   color: hsl(200deg, 100%, 50%);
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 0.85;
   padding: 0;
   margin: 5px 5px 0px 0px;
@@ -14122,7 +14122,7 @@ textarea.form-control-lg {
 .profile-select-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   margin-left: 20px;
