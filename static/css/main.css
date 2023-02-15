@@ -13707,19 +13707,8 @@ textarea.form-control-lg {
   font-size: 2em;
   line-height: 0.85;
   padding: 0;
-  margin: 5px 5px 0px 0px;
+  margin: 5px;
   align-self: flex-end;
-  justify-self: flex-start;
-}
-
-.profile-select-button {
-  color: hsl(200deg, 100%, 50%);
-  font-size: 1.5em;
-  line-height: 0.85;
-  padding: 0;
-  margin: 5px 5px 0px 0px;
-  align-self: flex-end;
-  justify-self: flex-start;
 }
 
 .close-button:hover,
@@ -13728,8 +13717,16 @@ textarea.form-control-lg {
   color: hsl(200deg, 100%, 50%);
 }
 
-.profile-select-button:hover,
-.profile-select-button:focus {
+.btn-edit-button {
+  color: hsl(200deg, 100%, 50%);
+  font-size: 1.5em;
+  line-height: 0.85;
+  padding: 0;
+  margin: 5px;
+}
+
+.btn-edit-button:hover,
+.btn-edit-button:focus {
   background-color: white;
   color: hsl(200deg, 100%, 50%);
 }
