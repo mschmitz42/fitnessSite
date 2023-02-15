@@ -4,6 +4,10 @@ from .forms import ContactForm, UploadFileForm
 # from django.core.mail import send_mail, BadHeaderError
 # from django.http import HttpResponse, HttpResponseRedirect
 from sms import send_sms
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, AllowAny
+from .models import Profile
+from .serializers import ProfileSerializer
 from .file_upload import handle_measurement_file_import, handle_macro_file_import
 import logging
 
@@ -88,6 +92,14 @@ def core_app_macro_file_upload(request):
     return render(request, 'core_app/profile.html')
 
 
+class ProfileViewSet(viewsets.ModelViewSet):
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    def get_queryset(self):
+        qs = Profile.objects.all()
+
+        return qs
 
 
 
