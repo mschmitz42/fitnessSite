@@ -12,6 +12,7 @@
         sessionStorage.setItem("MACRO_API_URL", '{% settings_value "MACRO_API_URL" %}')
         sessionStorage.setItem("PROFILE_API_URL", '{% settings_value "PROFILE_API_URL" %}')
         sessionStorage.setItem("USER_ID", '{{ user.id }}')
+        sessionStorage.setItem("USER_IS_ADMIN", '{{ user.is_staff }}')
     </script>
 
 {% endblock %}

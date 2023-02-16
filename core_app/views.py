@@ -94,10 +94,13 @@ def core_app_macro_file_upload(request):
 
 class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = ProfileSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        qs = Profile.objects.all()
+        if self.request.user.is_staff:
+            qs = Profile.objects.all()
+        else:
+            qs = Profile.objects.filter(user=self.request.user)
 
         return qs
 
