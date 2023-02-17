@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core_app.urls')),
     path('tracker/', include('tracker.urls')),
+    path('analyzer/', include('analyzer.urls')),
 ]

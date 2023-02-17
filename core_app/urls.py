@@ -16,6 +16,7 @@ urlpatterns = [
     path('home', views.core_app_index, name='home'),
     path('menu', views.core_app_menu, name='menu'),
     path('profile', views.core_app_profile, name='profile'),
+    path('client', views.core_app_client, name='client'),
     path('measurement-upload', views.core_app_measurement_file_upload, name='measurement-upload'),
     path('macro-upload', views.core_app_macro_file_upload, name='macro-upload'),
     path('under-construction', views.core_app_under_construction, name='under-construction'),

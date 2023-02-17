@@ -19,6 +19,18 @@
         .bg-4 {
             background-image: url("{% static 'img/menu-item-bg-4.jpg' %}");
         }
+        .bg-5 {
+            background-image: url("{% static 'img/menu-item-bg-5.jpg' %}");
+        }
+        .bg-6 {
+            background-image: url("{% static 'img/menu-item-bg-6.jpg' %}");
+        }
+        .bg-7 {
+            background-image: url("{% static 'img/menu-item-bg-7.jpg' %}");
+        }
+        .bg-8 {
+            background-image: url("{% static 'img/menu-item-bg-8.jpg' %}");
+        }
     </style>
 
 {% endblock %}
@@ -32,19 +44,21 @@
             <div class="menu-items-container">
                 <div class="menu-item bg-2">
                     <div class="menu-item-header">
-                        <a href="{% url 'tracker:tracker' %}">Fitness Tracker</a>
+                        <a href="{% url 'tracker:tracker' %}">Tracker</a>
                     </div>
                 </div>
-                <div class="menu-item bg-3">
-                    <div class="menu-item-header">
-                        <a href="{% url 'core_app:under-construction' %}">Web Site Settings</a>
-                    </div>
-                </div>
-                <div class="menu-item bg-4">
-                    <div class="menu-item-header">
-                        <a href="{% url 'core_app:under-construction' %}">Manage Clients</a>
-                    </div>
-               </div>
+{#                <div class="menu-item bg-3">#}
+{#                    <div class="menu-item-header">#}
+{#                        <a href="{% url 'core_app:under-construction' %}">Web Site Settings</a>#}
+{#                    </div>#}
+{#                </div>#}
+                {% if user.is_staff %}
+                    <div class="menu-item bg-6">
+                        <div class="menu-item-header">
+                            <a href="{% url 'core_app:client' %}">Manage Clients</a>
+                        </div>
+                   </div>
+                {% endif %}
                 <div class="menu-item bg-1">
                     <div class="menu-item-header">
                         <a href="{% url 'core_app:profile' %}">Profile</a>

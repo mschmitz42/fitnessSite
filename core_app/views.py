@@ -9,10 +9,15 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermiss
 from .models import Profile
 from .serializers import ProfileSerializer
 from .file_upload import handle_measurement_file_import, handle_macro_file_import
+from django.contrib.auth.decorators import login_required, user_passes_test
 import logging
 
 
 logger = logging.getLogger(__name__)
+
+
+def user_is_staff(user):
+    return user.is_staff
 
 
 def core_app_index(request):
@@ -40,6 +45,7 @@ def core_app_index(request):
     return render(request, 'core_app/index.html', {"form": form})
 
 
+@login_required
 def core_app_menu(request):
     return render(request, 'core_app/menu.html')
 
@@ -48,10 +54,18 @@ def core_app_under_construction(request):
     return render(request, 'core_app/under_construction.html')
 
 
+@login_required
 def core_app_profile(request):
     return render(request, 'core_app/profile.html')
 
 
+@login_required
+@user_passes_test(user_is_staff)
+def core_app_client(request):
+    return render(request, 'core_app/client.html')
+
+
+@login_required
 def core_app_measurement_file_upload(request):
     if request.method == 'GET':
         form = UploadFileForm()
@@ -72,6 +86,7 @@ def core_app_measurement_file_upload(request):
     return render(request, 'core_app/profile.html')
 
 
+@login_required
 def core_app_macro_file_upload(request):
     if request.method == 'GET':
         form = UploadFileForm()
