@@ -13945,6 +13945,10 @@ textarea.form-control-lg {
   border-color: #0AF;
 }
 
+.form-control {
+  cursor: pointer;
+}
+
 .measurement-form-container {
   display: flex;
   flex-direction: column;

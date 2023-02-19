@@ -46,7 +46,6 @@ class MacroViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        logger.info("MacroViewset:get_queryset")
 
         age = int(self.request.query_params.get("age", 365))
         user_id = int(self.request.query_params.get("user", self.request.user.id))

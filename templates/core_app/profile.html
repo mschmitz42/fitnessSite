@@ -39,34 +39,105 @@
 
 {% block content %}
 
-   <main class="page-content">
-        <section class="section section-menu">
-            <div class="menu-items-container">
-                {% if user.is_superuser %}
-                    <div class="menu-item bg-5">
-                        <div class="menu-item-header">
-                            <a href="{% url 'core_app:measurement-upload' %}">Upload Measurement File</a>
-                        </div>
-                    </div>
-                    <div class="menu-item bg-6">
-                        <div class="menu-item-header">
-                            <a href="{% url 'core_app:macro-upload' %}">Upload Macro File</a>
-                        </div>
-                    </div>
-                {% endif %}
-                 <div class="menu-item bg-7">
-                    <div class="menu-item-header">
-                        <a href="{% url 'core_app:under-construction' %}">Edit My Profile</a>
-                    </div>
-                </div>
-               <div class="menu-item bg-8">
-                    <div class="menu-item-header">
-                        <a href="{% url 'core_app:under-construction' %}">Change My Password</a>
-                    </div>
-                </div>
+    <main class="page-content container">
+        <div class="row justify-content-center mt-3">
+            <div class="col col-md-6 col-lg-4">
+                <h4>Edit Profile</h4>
             </div>
-        </section>
-   </main>
+        </div>
+        <div class="row justify-content-center mt-0">
+            <div class="col col-md-6 col-lg-4">
+               <form role="form" method="post">
+                    {% csrf_token %}
+                    {% for field in user_form %}
+                        <div class="input-group w-75">
+                            <input class="form-control mt-3"
+                                   id="{{ field.id_for_label }}"
+                                   maxlength="30"
+                                   name="{{ field.html_name }}"
+                                   type="{{ field.widget_type }}"
+                                   {%  if field.value %}
+                                        value="{{ field.value }}"
+                                   {% else %}
+                                        placeholder="{{ field.label }}"
+                                  {% endif %}
+                            />
+                        </div>
+                        {% if field.errors %}
+                            <div class="alert alert-danger mt-3" role="alert">
+                                {{ field.errors }}
+                            </div>
+                       {% endif %}
+                    {% endfor %}
+                    {% for field in profile_form %}
+                        <div class="input-group w-75">
+                            <input class="form-control mt-3"
+                                   id="{{ field.id_for_label }}"
+                                   maxlength="30"
+                                   name="{{ field.html_name }}"
+                                   type="{{ field.widget_type }}"
+                                   {%  if field.value %}
+                                        value="{{ field.value }}"
+                                   {% else %}
+                                        placeholder="{{ field.label }}"
+                                  {% endif %}
+                            />
+                        </div>
+                        {% if field.errors %}
+                            <div class="alert alert-danger mt-3" role="alert">
+                                {{ field.errors }}
+                            </div>
+                       {% endif %}
+                    {% endfor %}
+                    <input type="submit" class="btn btn-primary mt-3" value="Save and Continue..." />
+                </form>
+            </div>
+        </div>
+         <div class="row justify-content-center mt-3">
+            <div class="col col-md-6 col-lg-4">
+                <a href="{% url 'password_change' %}">Change Password</a>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col col-md-6 col-lg-4">
+                <a href="{% url 'logout' %}">Log Out</a>
+            </div>
+        </div>
+ </main>
+
+{#   <main class="page-content">#}
+{#        <section class="section section-menu">#}
+{#            <div class="menu-items-container">#}
+{#                {% if user.is_superuser %}#}
+{#                    <div class="menu-item bg-5">#}
+{#                        <div class="menu-item-header">#}
+{#                            <a href="{% url 'core_app:measurement-upload' %}">Upload Measurement File</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="menu-item bg-6">#}
+{#                        <div class="menu-item-header">#}
+{#                            <a href="{% url 'core_app:macro-upload' %}">Upload Macro File</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#                 <div class="menu-item bg-7">#}
+{#                    <div class="menu-item-header">#}
+{#                        <a href="{% url 'core_app:under-construction' %}">Edit Profile</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#               <div class="menu-item bg-1">#}
+{#                    <div class="menu-item-header">#}
+{#                        <a href="{% url 'password_change' %}">Change Password</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="menu-item bg-8">#}
+{#                    <div class="menu-item-header">#}
+{#                        <a href="{% url 'logout' %}">Log Out</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#           </div>#}
+{#        </section>#}
+{#   </main>#}
 
 
 

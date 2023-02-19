@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek Haff Fitness</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script defer src="{% static 'js/index-bundle.js' %}"></script>
+
+    {% block headContent %}
+
+    {% endblock %}
+
+</head>
+<body>
+    <nav class="nav nav-top">
+        <a href="{% url 'core_app:home' %}"><img class="logo" src="{% static 'img/DHF-logo-primary.png' %}" alt="Derek Haff Fitness Logo"></a>
+{#        <ul class="nav-list">#}
+{#            {% if user.is_authenticated %}#}
+{#                <li><a href="{% url 'core_app:menu' %}"><img class="menu-icon" src="{% static 'img/menu-icon.svg' %}" alt="Menu Icon"></a></li>#}
+{#            {% else %}#}
+{#                <li><a class="btn btn-primary" href="{% url 'login' %}">Login</a></li>#}
+{#            {%  endif %}#}
+{#        </ul>#}
+    </nav>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
